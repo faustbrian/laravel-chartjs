@@ -1,13 +1,50 @@
 {
     "name": "draperstudio/laravel-chartjs",
+    "type": "library",
     "description": "ChartJS Integration with a Fluent Builder for Laravel 5",
+    "keywords": [
+        "draperstudio",
+        "laravel-chartjs"
+    ],
+    "homepage": "https://github.com/DraperStudio/laravel-chartjs",
+    "license": "MIT",
+    "authors": [{
+        "name": "DraperStudio",
+        "email": "hello@draperstudio.tech",
+        "homepage": "http://draperstudio.tech",
+        "role": "Developer"
+    }],
     "require": {
-        "php": ">=5.5.9",
-        "draperstudio/laravel-service-provider": "^1.0"
+        "php": "^5.5.9 || ^7.0",
+        "draperstudio/laravel-service-provider": "^0.1"
+    },
+    "require-dev": {
+        "graham-campbell/testbench": "^3.1",
+        "phpunit/phpunit": "^4.8 || ^5.0",
+        "scrutinizer/ocular": "~1.1",
+        "squizlabs/php_codesniffer": "~2.3"
     },
     "autoload": {
         "psr-4": {
             "DraperStudio\\ChartJS\\": "src/"
         }
-    }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DraperStudio\\Tests\\ChartJS\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

@@ -9,22 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace DraperStudio\ChartJS\Facades;
+namespace DraperStudio\Tests\ChartJS;
 
-use Illuminate\Support\Facades\Facade;
+use GrahamCampbell\TestBenchCore\ServiceProviderTrait;
 
 /**
- * Class ChartJS.
+ * This is the service provider test class.
  *
  * @author DraperStudio <hello@draperstudio.tech>
  */
-class ChartJS extends Facade
+class ServiceProviderTest extends AbstractTestCase
 {
-    /**
-     * @return string
-     */
-    protected static function getFacadeAccessor()
-    {
-        return 'chartjs';
-    }
+    use ServiceProviderTrait;
 }
