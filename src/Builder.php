@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of Laravel ChartJS.
+ *
+ * (c) Brian Faust <hello@brianfaust.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace BrianFaust\ChartJS;
 
 class Builder
@@ -109,7 +118,7 @@ class Builder
      */
     public function type($type)
     {
-        if (!array_key_exists($type, $this->types)) {
+        if (! array_key_exists($type, $this->types)) {
             throw new \InvalidArgumentException('Invalid Chart type.');
         }
 
