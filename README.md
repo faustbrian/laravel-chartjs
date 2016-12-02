@@ -11,20 +11,13 @@ $ composer require faustbrian/laravel-chartjs
 Add the service provider to `config/app.php` in the `providers` array.
 
 ``` php
-'providers' => [
-    // ... Illuminate Providers
-    // ... App Providers
-    BrianFaust\ChartJS\ServiceProvider::class
-];
+BrianFaust\ChartJS\ChartJSServiceProvider::class
 ```
 
 If you want you can use the [facade](http://laravel.com/docs/facades). Add the reference in `config/app.php` to your aliases array.
 
 ``` php
-'aliases' => [
-    // ... Illuminate Facades
-    'ChartJS' => BrianFaust\ChartJS\Facades\ChartJS::class
-];
+'ChartJS' => BrianFaust\ChartJS\Facades\ChartJS
 ```
 
 ## Usage
