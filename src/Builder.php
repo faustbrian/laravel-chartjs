@@ -22,16 +22,16 @@ class Builder
      * @var array
      */
     private $defaults = [
-        'context' => '2d',
-        'datasets' => [],
+        'context'   => '2d',
+        'datasets'  => [],
         'dimension' => ['width' => 'auto', 'height' => 'auto'],
-        'element' => null,
-        'labels' => [],
-        'prefix' => 'chartjs-',
-        'type' => 'Line',
-        'options' => [
-            'animation' => true,
-            'animationSteps' => 100,
+        'element'   => null,
+        'labels'    => [],
+        'prefix'    => 'chartjs-',
+        'type'      => 'Line',
+        'options'   => [
+            'animation'       => true,
+            'animationSteps'  => 100,
             'animationEasing' => 'easeOutBounce',
         ],
     ];
@@ -40,12 +40,12 @@ class Builder
      * @var array
      */
     private $types = [
-        'Bar' => 'extended',
-        'Doughnut' => 'minimal',
-        'Line' => 'extended',
-        'Pie' => 'minimal',
+        'Bar'       => 'extended',
+        'Doughnut'  => 'minimal',
+        'Line'      => 'extended',
+        'Pie'       => 'minimal',
         'PolarArea' => 'minimal',
-        'Radar' => 'extended',
+        'Radar'     => 'extended',
     ];
 
     /**
@@ -118,7 +118,7 @@ class Builder
      */
     public function type($type)
     {
-        if (! array_key_exists($type, $this->types)) {
+        if (!array_key_exists($type, $this->types)) {
             throw new \InvalidArgumentException('Invalid Chart type.');
         }
 
