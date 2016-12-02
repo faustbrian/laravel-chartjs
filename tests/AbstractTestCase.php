@@ -11,8 +11,8 @@
 
 namespace BrianFaust\Tests\ChartJS;
 
-use GrahamCampbell\TestBench\AbstractPackageTestCase;
 use BrianFaust\ChartJS\ServiceProvider;
+use GrahamCampbell\TestBench\AbstractPackageTestCase;
 
 abstract class AbstractTestCase extends AbstractPackageTestCase
 {
