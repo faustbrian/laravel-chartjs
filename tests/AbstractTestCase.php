@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace BrianFaust\Tests\ChartJS;
 
 use BrianFaust\ChartJS\ServiceProvider;
@@ -23,7 +25,7 @@ abstract class AbstractTestCase extends AbstractPackageTestCase
      *
      * @return string
      */
-    protected function getServiceProviderClass($app)
+    protected function getServiceProviderClass($app): string
     {
         return ServiceProvider::class;
     }

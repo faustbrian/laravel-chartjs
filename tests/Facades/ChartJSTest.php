@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace BrianFaust\Tests\ChartJS\Tests\Facades;
 
 use BrianFaust\ChartJS\Builder;
