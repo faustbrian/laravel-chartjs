@@ -22,6 +22,8 @@ declare(strict_types=1);
 
 namespace BrianFaust\ChartJS;
 
+use Illuminate\View\View;
+
 class Builder
 {
     /**
@@ -64,7 +66,7 @@ class Builder
      *
      * @return $this
      */
-    public function name($name)
+    public function name($name): self
     {
         $this->name = $name;
         $this->charts[$name] = $this->defaults;
@@ -77,7 +79,7 @@ class Builder
      *
      * @return Builder
      */
-    public function element($element)
+    public function element($element): self
     {
         return $this->set('element', $element);
     }
@@ -87,7 +89,7 @@ class Builder
      *
      * @return Builder
      */
-    public function context($context)
+    public function context($context): self
     {
         return $this->set('context', $context);
     }
@@ -97,7 +99,7 @@ class Builder
      *
      * @return Builder
      */
-    public function labels(array $labels)
+    public function labels(array $labels): self
     {
         return $this->set('labels', $labels);
     }
@@ -107,7 +109,7 @@ class Builder
      *
      * @return Builder
      */
-    public function datasets(array $datasets)
+    public function datasets(array $datasets): self
     {
         return $this->set('datasets', $datasets);
     }
@@ -117,7 +119,7 @@ class Builder
      *
      * @return Builder
      */
-    public function prefix($prefix)
+    public function prefix($prefix): self
     {
         return $this->set('prefix', $prefix);
     }
@@ -127,7 +129,7 @@ class Builder
      *
      * @return Builder
      */
-    public function type($type)
+    public function type($type): self
     {
         if (!array_key_exists($type, $this->types)) {
             throw new \InvalidArgumentException('Invalid Chart type.');
@@ -142,7 +144,7 @@ class Builder
      *
      * @return Builder
      */
-    public function dimension($width, $height = 0)
+    public function dimension($width, $height = 0): self
     {
         if (empty($height)) {
             $height = $width;
@@ -156,7 +158,7 @@ class Builder
      *
      * @return $this
      */
-    public function options(array $options)
+    public function options(array $options): self
     {
         foreach ($options as $key => $value) {
             $this->set('options.'.$key, $value);
@@ -170,7 +172,7 @@ class Builder
      *
      * @return mixed
      */
-    public function renderCanvas($name)
+    public function renderCanvas($name): View
     {
         $chart = $this->charts[$name];
 
@@ -185,7 +187,7 @@ class Builder
      *
      * @return mixed
      */
-    public function renderScripts($name)
+    public function renderScripts($name): View
     {
         $chart = $this->charts[$name];
 
@@ -204,7 +206,7 @@ class Builder
      *
      * @return string
      */
-    private function getView($name)
+    private function getView($name): string
     {
         return 'chartjs::scripts.'.$this->types[$this->charts[$name]['type']];
     }
@@ -225,7 +227,7 @@ class Builder
      *
      * @return $this
      */
-    private function set($key, $value)
+    private function set($key, $value): self
     {
         array_set($this->charts[$this->name], $key, $value);
 
