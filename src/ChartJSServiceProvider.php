@@ -22,9 +22,9 @@ declare(strict_types=1);
 
 namespace BrianFaust\ChartJS;
 
-use BrianFaust\ServiceProvider\ServiceProvider;
+use BrianFaust\ServiceProvider\AbstractServiceProvider;
 
-class ChartJSServiceProvider extends ServiceProvider
+class ChartJSServiceProvider extends AbstractServiceProvider
 {
     /**
      * Bootstrap the application services.
