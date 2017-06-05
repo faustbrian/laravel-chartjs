@@ -1,8 +1,5 @@
 <?php
 
-
-declare(strict_types=1);
-
 /*
  * This file is part of Laravel ChartJS.
  *
@@ -14,49 +11,29 @@ declare(strict_types=1);
 
 namespace BrianFaust\ChartJS;
 
-use BrianFaust\ServiceProvider\AbstractServiceProvider;
+use Illuminate\Support\ServiceProvider;
 
-class ChartJSServiceProvider extends AbstractServiceProvider
+class ChartJSServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
      */
-    public function boot(): void
+    public function boot()
     {
-        $this->publishViews();
+        $this->publishes([
+            __DIR__.'/../resources/views' => base_path('resources/views/vendor/laravel-chartjs'),
+        ], 'views');
 
-        $this->loadViews();
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'laravel-chartjs');
     }
 
     /**
      * Register the application services.
      */
-    public function register(): void
+    public function register()
     {
-        parent::register();
-
         $this->app->singleton('chartjs', function ($app) {
             return new Builder();
         });
-    }
-
-    /**
-     * Get the services provided by the provider.
-     *
-     * @return array
-     */
-    public function provides(): array
-    {
-        return array_merge(parent::provides(), ['chartjs']);
-    }
-
-    /**
-     * Get the default package name.
-     *
-     * @return string
-     */
-    public function getPackageName(): string
-    {
-        return 'chartjs';
     }
 }

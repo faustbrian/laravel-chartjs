@@ -1,8 +1,5 @@
 <?php
 
-
-declare(strict_types=1);
-
 /*
  * This file is part of Laravel ChartJS.
  *
@@ -27,16 +24,16 @@ class Builder
      * @var array
      */
     private $defaults = [
-        'context'   => '2d',
-        'datasets'  => [],
+        'context' => '2d',
+        'datasets' => [],
         'dimension' => ['width' => 'auto', 'height' => 'auto'],
-        'element'   => null,
-        'labels'    => [],
-        'prefix'    => 'chartjs-',
-        'type'      => 'Line',
-        'options'   => [
-            'animation'       => true,
-            'animationSteps'  => 100,
+        'element' => null,
+        'labels' => [],
+        'prefix' => 'chartjs-',
+        'type' => 'Line',
+        'options' => [
+            'animation' => true,
+            'animationSteps' => 100,
             'animationEasing' => 'easeOutBounce',
         ],
     ];
@@ -45,12 +42,12 @@ class Builder
      * @var array
      */
     private $types = [
-        'Bar'       => 'extended',
-        'Doughnut'  => 'minimal',
-        'Line'      => 'extended',
-        'Pie'       => 'minimal',
+        'Bar' => 'extended',
+        'Doughnut' => 'minimal',
+        'Line' => 'extended',
+        'Pie' => 'minimal',
         'PolarArea' => 'minimal',
-        'Radar'     => 'extended',
+        'Radar' => 'extended',
     ];
 
     /**

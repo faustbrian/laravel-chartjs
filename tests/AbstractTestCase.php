@@ -1,8 +1,5 @@
 <?php
 
-
-declare(strict_types=1);
-
 /*
  * This file is part of Laravel ChartJS.
  *
@@ -14,7 +11,6 @@ declare(strict_types=1);
 
 namespace BrianFaust\Tests\ChartJS;
 
-use BrianFaust\ChartJS\ServiceProvider;
 use GrahamCampbell\TestBench\AbstractPackageTestCase;
 
 abstract class AbstractTestCase extends AbstractPackageTestCase
@@ -28,6 +24,6 @@ abstract class AbstractTestCase extends AbstractPackageTestCase
      */
     protected function getServiceProviderClass($app): string
     {
-        return ServiceProvider::class;
+        return \BrianFaust\ChartJS\ChartJSServiceProvider::class;
     }
 }
