@@ -32,6 +32,14 @@ class ChartJSServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->registerBuilder();
+    }
+
+    /**
+     * Register the builder.
+     */
+    private function registerBuilder()
+    {
         $this->app->singleton('chartjs', function ($app) {
             return new Builder();
         });
