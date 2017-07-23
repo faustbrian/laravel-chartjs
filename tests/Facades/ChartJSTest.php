@@ -13,8 +13,8 @@ namespace BrianFaust\Tests\ChartJS\Tests\Facades;
 
 use BrianFaust\ChartJS\Builder;
 use BrianFaust\ChartJS\Facades\ChartJS;
-use BrianFaust\Tests\ChartJS\AbstractTestCase;
 use GrahamCampbell\TestBenchCore\FacadeTrait;
+use BrianFaust\Tests\ChartJS\AbstractTestCase;
 
 class ChartJSTest extends AbstractTestCase
 {
