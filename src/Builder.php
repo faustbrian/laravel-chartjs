@@ -122,7 +122,7 @@ class Builder
      */
     public function type($type): self
     {
-        if (! array_key_exists($type, $this->types)) {
+        if (!array_key_exists($type, $this->types)) {
             throw new \InvalidArgumentException('Invalid Chart type.');
         }
 
