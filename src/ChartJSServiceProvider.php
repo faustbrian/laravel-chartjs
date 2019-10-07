@@ -26,7 +26,7 @@ class ChartJSServiceProvider extends ServiceProvider
             __DIR__.'/../resources/views' => base_path('resources/views/vendor/laravel-chartjs'),
         ], 'views');
 
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'laravel-chartjs');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'chartjs');
     }
 
     /**
